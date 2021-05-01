@@ -7,28 +7,29 @@
 <body>
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}"></nav>
 
-<div class="container-fluid bg-secondary form-Border">
-    <div class="row text-center formManagement border-info">
+<div class="container-fluid ">
+    <div class="row text-center ">
         <div class="col">
             <a class="btn btn-success" href="/author/add"><i class="fa fa-user-plus"></i>
                 &nbsp; New Author</a>
         </div>
         <div class="col">
-            <h4 class="text-info text-center">
+            <h2 class="text-light text-center">
                 <strong>
                     Author Management
                 </strong>
-            </h4>
+            </h2>
         </div>
-        <div class="col">
-            <!-- <a href="/author/workingPlace" id="searchShow" class="btn btn-primary">
-                 <i class="fa fa-user " style="font-size: 20px"></i>&nbsp;Add&nbsp;
-                 <i class="fas fa-store-alt" style="font-size: 20px"></i>
-                 &nbsp;
-             </a>-->
-        </div>
-    </div>
-</div>
+        <!-- Home Button-->
+        <div class="col" >
+            <a href="/home" id="searchShow" class="btn btn-primary" tabindex="2" >
+                <!--<i class="fa fa-user " style="font-size: 20px"></i>&nbsp;Add&nbsp;-->
+                <i class="fas fa-home" style="font-size: 20px" ></i >&nbsp;&nbsp;Home
+                &nbsp;
+            </a >
+        </div >
+    </div >
+</div >
 <div class="container-fluid   text-center">
     <div class="col">
         <div class="col" id="authorListPresent" data-th-if="${not #lists.isEmpty(authors)}">
