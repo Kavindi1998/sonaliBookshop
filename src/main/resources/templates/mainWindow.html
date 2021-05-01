@@ -5,6 +5,7 @@
 </head >
 
 <body>
+
 <nav data-th-replace="~{fragments/navBar :: navBarFragment}" ></nav >
 <div id="layoutSidenav" >
 
@@ -12,13 +13,16 @@
     <main >
       <div class="container-fluid mainbody" >
         <div class="row cardrow" >
+
           <div class="col-2 " >
             <div class="card text-white bg-warning" >
               <div class="card-header" >Customer</div >
               <div class="card-body" >
-                <img src="../img/customer.png" style="width:185px;" >
+                <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_CASHIER')" data-th-href="@{'/customer'}"
+                   class="nav-link text-primary" >
+                  <img src="../img/customer.png" style="width:185px;" ></a>
               </div >
-            </div >
+            </div>
 
           </div >
 
@@ -26,7 +30,9 @@
             <div class="card text-white bg-success" >
               <div class="card-header" >Employee</div >
               <div class="card-body" >
-                <img src="../img/employee.png" style="width:210px;" >
+                <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_HR_MANAGER' ,'ROLE_ADMIN')"
+                   data-th-href="@{'/employee'}" class="nav-link text-primary" >
+                   <img src="../img/employee.png" style="width:210px;" ></a>
               </div >
             </div >
           </div >
@@ -35,7 +41,9 @@
             <div class="card text-white bg-warning" >
               <div class="card-header" >Supplier</div >
               <div class="card-body" >
-                <img src="../img/supplier2.png" style="width:120px;margin-left:20px" >
+                <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_PROCUREMENT_MANAGER')"
+                   data-th-href="@{'/supplier'}" class="nav-link text-primary" >
+                <img src="../img/supplier2.png" style="width:120px;margin-left:20px" ></a >
               </div >
             </div >
           </div >
@@ -44,7 +52,9 @@
             <div class="card text-white bg-success" >
               <div class="card-header" >Author</div >
               <div class="card-body" >
-                <img src="../img/employee.png" style="width:210px;" >
+                <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_PROCUREMENT_MANAGER' ,'ROLE_CASHIER')"
+                   data-th-href="@{'/author'}" class="nav-link text-primary" >
+                  <img src="../img/author.png" style="width:160px;" ></a>
               </div >
             </div >
           </div >
@@ -52,10 +62,12 @@
 
         <div class="row cardrow" >
           <div class="col-2" >
-            <div class="card text-white bg-secondary" >
+            <div class="card text-white bg-danger" >
               <div class="card-header" >Payment</div >
               <div class="card-body" >
-                <img src="../img/payment.png" style="width:160px; margin-left:20px" >
+                <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_ACCOUNT_MANAGER')" data-th-href="@{'/payment'}"
+                   class="nav-link text-primary" >
+                  <img src="../img/payment.png" style="width:160px; margin-left:20px" ></a>
               </div >
             </div >
           </div >
@@ -63,7 +75,9 @@
             <div class="card text-white bg-secondary" >
               <div class="card-header" >Purchase Order</div >
               <div class="card-body" >
-                <img src="../img/porder.png" style="width:170px; margin-left:20px " >
+                <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_PROCUREMENT_MANAGER')"
+                   data-th-href="@{'/purchaseOrder'}" class="nav-link text-primary" >
+                  <img src="../img/porder.png" style="width:170px; margin-left:20px " ></a>
               </div >
             </div >
           </div >
@@ -71,7 +85,9 @@
             <div class="card text-white bg-danger" >
               <div class="card-header" >Item</div >
               <div class="card-body" >
-                <img src="../img/item.jpg" style="width:177px;" >
+                <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_PROCUREMENT_MANAGER' ,'ROLE_CASHIER')"
+                   data-th-href="@{'/item'}" class="nav-link text-primary" >
+                  <img src="../img/books.png" style="width:177px;" ></a>
 
               </div >
             </div >
@@ -82,13 +98,15 @@
             <div class="card text-white bg-secondary" >
               <div class="card-header" >Report</div >
               <div class="card-body" >
-                <img src="../img/payment.png" style="width:160px; margin-left:20px" >
+                <a data-sec-authorize="hasAnyAuthority('ROLE_MANAGER', 'ROLE_PROCUREMENT_MANAGER' )"
+                   data-th-href="@{'/report/payment'}" class="nav-link text-primary" >
+                  <img src="../img/cal.png" style="width:160px; margin-left:20px" ></a>
               </div >
             </div >
           </div >
         </div >
 
-  </div >
+      </div >
     </main >
     <!--footer include-->
     <div data-th-replace="~{fragments/footer :: footerFragment}" ></div >
